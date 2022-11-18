@@ -7,19 +7,39 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     [SerializeField] private List<TileInfo> tiles;
+
+    public List<TileInfo> Tiles
+    {
+        get { return tiles; }
+    }
 }
 
 [Serializable]
-struct TileInfo
+public struct TileInfo
 {
     [SerializeField] [Tooltip("Voxel coordinates of the tile stack. Player always starts at (0, 0)")]
     private TileCoord coords;
     [SerializeField] [Range(1, 16)] [Tooltip("A value of 1 means base height")] private int height;
     [SerializeField] private bool isGoal;
+
+    public TileCoord Coords
+    {
+        get { return coords;  }
+    }
+
+    public int Height
+    {
+        get { return height; }
+    }
+
+    public bool IsGoal
+    {
+        get { return isGoal; }
+    }
 }
 
 [Serializable]
-struct TileCoord
+public struct TileCoord
 {
     [SerializeField] private int x;
     [SerializeField] private int y;
