@@ -14,7 +14,7 @@ struct TileInfo
 {
     [SerializeField] [Tooltip("Voxel coordinates of the tile stack. Player always starts at (0, 0)")]
     private TileCoord coords;
-    [SerializeField] [Tooltip("A value of 1 means base height")] private int height;
+    [SerializeField] [Range(1, 16)] [Tooltip("A value of 1 means base height")] private int height;
     [SerializeField] private bool isGoal;
 }
 
