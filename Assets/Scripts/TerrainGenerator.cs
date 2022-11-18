@@ -11,7 +11,7 @@ public class TerrainGenerator : MonoBehaviour
 
     private Vector3 meshBounds;
 
-    private void Start()
+    public void Generate()
     {
         CalculateMeshBounds();
         GenerateTerrain();
@@ -47,6 +47,7 @@ public class TerrainGenerator : MonoBehaviour
                 if (tileInfo.IsGoal && heightCount == tileInfo.Height - 1)
                 {
                     block.GetComponentInChildren<Renderer>().material = goalMaterial;
+                    GameManager.instance.AddGoalBlock(ref block);
                 }
             }
         }
