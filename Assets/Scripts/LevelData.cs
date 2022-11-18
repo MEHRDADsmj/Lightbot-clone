@@ -42,15 +42,15 @@ public struct TileInfo
 public struct TileCoord
 {
     [SerializeField] private int x;
-    [SerializeField] private int y;
+    [SerializeField] private int z;
 
     public int X
     {
         get { return x; }
     }
 
-    public int Y
+    public int Z
     {
-        get { return y; }
+        get { return z; }
     }
 }

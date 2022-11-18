@@ -22,6 +22,11 @@ public class TerrainGenerator : MonoBehaviour
     /// </summary>
     private void CalculateMeshBounds()
     {
+        if (!blockTemplate)
+        {
+            Debug.LogError("TerrainGenerator - blockTemplate is not provided");
+            return;
+        }
         Renderer renderer = blockTemplate.GetComponentInChildren<Renderer>();
         Vector3 extents = renderer.bounds.extents;
         meshBounds.x = extents.x * 2.0f;
@@ -31,6 +36,19 @@ public class TerrainGenerator : MonoBehaviour
     
     private void GenerateTerrain()
     {
-        
+        GameObject block = null;
+        foreach (var tileInfo in levelConfigData.Tiles)
+        {
+            for (int heightCount = 0; heightCount < tileInfo.Height; ++heightCount)
+            {
+                Vector3 spawnPos = new Vector3(tileInfo.Coords.X * meshBounds.x, heightCount * meshBounds.y,
+                    tileInfo.Coords.Z * meshBounds.z);
+                block = Instantiate(blockTemplate, spawnPos, Quaternion.identity);
+                if (tileInfo.IsGoal && heightCount == tileInfo.Height - 1)
+                {
+                    block.GetComponentInChildren<Renderer>().material = goalMaterial;
+                }
+            }
+        }
     }
 }
