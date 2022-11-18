@@ -51,4 +51,20 @@ public class TerrainGenerator : MonoBehaviour
             }
         }
     }
+
+    public Vector3 MeshBounds
+    {
+        get { return meshBounds; }
+    }
+
+    /// <summary>
+    /// Returns the voxel coordinates of parameter "block"
+    /// </summary>
+    /// <param name="block"></param>
+    /// <returns></returns>
+    public Vector3 NormalizeBlockPosition(GameObject block)
+    {
+        Vector3 pos = block.transform.position;
+        return new Vector3((int)(pos.x / meshBounds.x), (int)(pos.y / meshBounds.y), (int)(pos.z / meshBounds.z));
+    }
 }
