@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     private Dictionary<GameObject, bool> goalBlocks = new Dictionary<GameObject, bool>();
 
     public static GameManager instance;
+
+    public TerrainGenerator Terrain
+    {
+        get { return terrainGenerator; }
+    }
     
     private void Awake()
     {

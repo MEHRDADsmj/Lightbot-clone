@@ -28,4 +28,9 @@ public class PlayerController : MonoBehaviour
             return null;
         }
     }
+
+    public void MoveForward()
+    {
+        transform.position += (GameManager.instance.Terrain.MeshBounds.x * transform.forward);
+    }
 }
