@@ -33,4 +33,9 @@ public class PlayerController : MonoBehaviour
     {
         transform.position += (GameManager.instance.Terrain.MeshBounds.x * transform.forward);
     }
+
+    public void Rotate(float amount)
+    {
+        transform.Rotate(Vector3.up, amount);
+    }
 }
