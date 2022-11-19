@@ -7,6 +7,7 @@ public class TerrainGenerator : MonoBehaviour
 {
     [SerializeField] private LevelData levelConfigData;
     [SerializeField] [Tooltip("Block with the default material")] private GameObject blockTemplate;
+    [SerializeField]  private GameObject player;
 
     private Vector3 meshBounds;
 
@@ -36,11 +37,12 @@ public class TerrainGenerator : MonoBehaviour
     private void GenerateTerrain()
     {
         GameObject block = null;
+        Vector3 spawnPos;
         foreach (var tileInfo in levelConfigData.Tiles)
         {
             for (int heightCount = 0; heightCount < tileInfo.Height; ++heightCount)
             {
-                Vector3 spawnPos = new Vector3(tileInfo.Coords.X * meshBounds.x, heightCount * meshBounds.y,
+                spawnPos = new Vector3(tileInfo.Coords.X * meshBounds.x, heightCount * meshBounds.y,
                     tileInfo.Coords.Z * meshBounds.z);
                 block = Instantiate(blockTemplate, spawnPos, Quaternion.identity);
                 if (tileInfo.IsGoal && heightCount == tileInfo.Height - 1)
@@ -48,6 +50,13 @@ public class TerrainGenerator : MonoBehaviour
                     block.GetComponent<Block>().IsGoal = true;
                     GameManager.instance.AddGoalBlock(block);
                 }
+            }
+
+            if (tileInfo.Coords.X == 0 && tileInfo.Coords.Z == 0)
+            {
+                spawnPos = new Vector3(tileInfo.Coords.X * meshBounds.x, (tileInfo.Height) * meshBounds.y,
+                    tileInfo.Coords.Z * meshBounds.z);
+                Instantiate(player, spawnPos, Quaternion.identity);
             }
         }
     }

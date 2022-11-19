@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelConfigData: {fileID: 11400000, guid: af7c76e810eff3249b278acba41e3a40, type: 2}
   blockTemplate: {fileID: 5155912496310349271, guid: b206d2f7d9c3f0c418a50408f06cead8, type: 3}
-  goalMaterial: {fileID: 2100000, guid: eec7f94adc23f5e4ebbddfde5e072376, type: 2}
+  player: {fileID: 6651098163192276629, guid: 790e2605468509b4e814906f3ddac7bc, type: 3}
