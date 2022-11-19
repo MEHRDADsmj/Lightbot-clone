@@ -7,7 +7,6 @@ public class TerrainGenerator : MonoBehaviour
 {
     [SerializeField] private LevelData levelConfigData;
     [SerializeField] [Tooltip("Block with the default material")] private GameObject blockTemplate;
-    [SerializeField] private Material goalMaterial;
 
     private Vector3 meshBounds;
 
@@ -46,8 +45,8 @@ public class TerrainGenerator : MonoBehaviour
                 block = Instantiate(blockTemplate, spawnPos, Quaternion.identity);
                 if (tileInfo.IsGoal && heightCount == tileInfo.Height - 1)
                 {
-                    block.GetComponentInChildren<Renderer>().material = goalMaterial;
-                    GameManager.instance.AddGoalBlock(ref block);
+                    block.GetComponent<Block>().IsGoal = true;
+                    GameManager.instance.AddGoalBlock(block);
                 }
             }
         }

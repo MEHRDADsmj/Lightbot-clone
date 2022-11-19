@@ -1,21 +1,26 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TerrainGenerator terrainGenerator;
-    private List<GameObject> goalBlocks = new List<GameObject>();
+    private Dictionary<GameObject, bool> goalBlocks = new Dictionary<GameObject, bool>();
 
     public static GameManager instance;
     
-    private void Start()
+    private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
+    }
+
+    private void Start()
+    {
         BeginTerrainGeneration();
     }
 
@@ -27,11 +32,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddGoalBlock(ref GameObject block)
+    public void LightBlock(GameObject block)
+    {
+        if (block && block.CompareTag("block") && goalBlocks.ContainsKey(block))
+        {
+            bool status;
+            goalBlocks.TryGetValue(block, out status);
+            goalBlocks[block] = !status;
+            block.GetComponent<Block>().ToggleLight();
+        }
+    }
+
+    public void AddGoalBlock(GameObject block)
     {
         if (block && block.CompareTag("block"))
         {
-            goalBlocks.Add(block);
+            goalBlocks.Add(block, false);
         }
     }
 }
