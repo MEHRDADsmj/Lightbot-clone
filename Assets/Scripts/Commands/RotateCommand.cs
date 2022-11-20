@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateCommand : ICommand
+public class RotateCommand : CommandBase
 {
-    private float rotation = 90.0f;
+    [SerializeField] private float rotation = 90.0f;
     
-    public void Execute()
+    public override void Execute()
     {
+        base.Execute();
         PlayerController.instance.Rotate(rotation);
     }
 }

@@ -9,9 +9,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TerrainGenerator terrainGenerator;
     private Dictionary<GameObject, bool> goalBlocks = new Dictionary<GameObject, bool>();
     [SerializeField] private Procedure main;
+    [SerializeField] private Procedure proc1;
+
+    private Procedure currentProc;
 
     public static GameManager instance;
 
+    public Procedure CurrentProcedure
+    {
+        get { return currentProc; }
+        set { currentProc = value; }
+    }
+    
     public TerrainGenerator Terrain
     {
         get { return terrainGenerator; }
@@ -28,6 +37,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         BeginTerrainGeneration();
+        currentProc = main;
+        FindObjectOfType<MoveCommand>().Register();
     }
 
     public void BeginTerrainGeneration()
@@ -60,5 +71,10 @@ public class GameManager : MonoBehaviour
     public void StartExecution()
     {
         main.Execute();
+    }
+
+    public void AddCommand(ICommand command)
+    {
+        currentProc.AddCommand(command);
     }
 }

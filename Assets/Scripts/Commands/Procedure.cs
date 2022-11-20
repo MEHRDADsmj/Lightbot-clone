@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Procedure : MonoBehaviour, ICommand
+public class Procedure : CommandBase
 {
     private List<ICommand> commands = new List<ICommand>();
 
-    public void Execute()
+    public override void Execute()
     {
+        base.Execute();
         StartCoroutine(StartExecution());
     }
 
