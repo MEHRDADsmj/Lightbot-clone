@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void AddCommand(ICommand command)
     {
-        currentProc.AddCommand(command);
+        CurrentProcedure.AddCommand(command);
     }
 
     private void ResetGame()
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
         main.Empty();
         proc1.Empty();
         goalBlocks.Clear();
-        currentProc = main;
+        CurrentProcedure = main;
     }
 
     private void CleanupLevel()
