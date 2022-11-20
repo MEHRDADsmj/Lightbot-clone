@@ -698,7 +698,7 @@ PrefabInstance:
     - target: {fileID: 6058262264790132425, guid: fd163e70194ecb94c964c97a2979a4af, type: 3}
       propertyPath: levelConfigData
       value: 
-      objectReference: {fileID: 11400000, guid: 09f9d8c14ca78334387891c6f40cc33b, type: 2}
+      objectReference: {fileID: 11400000, guid: 9a7a39bebb1dfe549968690e9ef17cf8, type: 2}
     - target: {fileID: 6058262264790132438, guid: fd163e70194ecb94c964c97a2979a4af, type: 3}
       propertyPath: m_Name
       value: TerrainGenerator
