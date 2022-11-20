@@ -36,8 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        BeginTerrainGeneration();
-        currentProc = main;
+        ResetGame();
     }
 
     public void BeginTerrainGeneration()
@@ -75,5 +74,30 @@ public class GameManager : MonoBehaviour
     public void AddCommand(ICommand command)
     {
         currentProc.AddCommand(command);
+    }
+
+    private void ResetGame()
+    {
+        CleanupLevel();
+        BeginTerrainGeneration();
+        main.Empty();
+        proc1.Empty();
+        goalBlocks.Clear();
+        currentProc = main;
+    }
+
+    private void CleanupLevel()
+    {
+        List<Block> blocks = FindObjectsOfType<Block>().ToList();
+        for (int index = 0; index < blocks.Count; ++index)
+        {
+            Destroy(blocks[index].gameObject);
+        }
+
+        List<PlayerController> players = FindObjectsOfType<PlayerController>().ToList();
+        for (int index = 0; index < players.Count; ++index)
+        {
+            Destroy(players[index].gameObject);
+        }
     }
 }

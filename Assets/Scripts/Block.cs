@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    private Renderer renderer = new Renderer();
+    private Renderer blockRenderer = new Renderer();
     private bool isGoal;
     [SerializeField] private Material defaultMat;
     [SerializeField] private Material lightOffMat;
@@ -13,15 +13,15 @@ public class Block : MonoBehaviour
 
     private void Awake()
     {
-        renderer = GetComponentInChildren<Renderer>();
-        renderer.material = defaultMat;
+        blockRenderer = GetComponentInChildren<Renderer>();
+        blockRenderer.material = defaultMat;
     }
 
     public void SetGoalMat()
     {
         if (isGoal)
         {
-            renderer.material = lightOffMat;
+            blockRenderer.material = lightOffMat;
         }
     }
 
@@ -42,13 +42,13 @@ public class Block : MonoBehaviour
             return;
         }
 
-        if (renderer.sharedMaterial == lightOffMat)
+        if (blockRenderer.sharedMaterial == lightOffMat)
         {
-            renderer.sharedMaterial = lightOnMat;
+            blockRenderer.sharedMaterial = lightOnMat;
         }
-        else if(renderer.sharedMaterial == lightOnMat)
+        else if(blockRenderer.sharedMaterial == lightOnMat)
         {
-            renderer.sharedMaterial = lightOffMat;
+            blockRenderer.sharedMaterial = lightOffMat;
         }
     }
 }

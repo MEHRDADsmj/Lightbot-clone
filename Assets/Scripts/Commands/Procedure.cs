@@ -30,4 +30,9 @@ public class Procedure : CommandBase
     {
         commands.RemoveAt(index);
     }
+
+    public void Empty()
+    {
+        commands.Clear();
+    }
 }
