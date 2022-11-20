@@ -372,8 +372,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.09635846, y: 0.8647267, z: -0.18188043, w: -0.45812905}
-  m_LocalPosition: {x: 6.6988215, y: 4.795867, z: 7.1169767}
+  m_LocalRotation: {x: -0.14431311, y: 0.8469458, z: -0.28982773, w: -0.42173037}
+  m_LocalPosition: {x: 4.351083, y: 8.034452, z: 5.3677855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -698,7 +698,7 @@ PrefabInstance:
     - target: {fileID: 6058262264790132425, guid: fd163e70194ecb94c964c97a2979a4af, type: 3}
       propertyPath: levelConfigData
       value: 
-      objectReference: {fileID: 11400000, guid: a309e93479ff25c4bb19dd23449480c6, type: 2}
+      objectReference: {fileID: 11400000, guid: 09f9d8c14ca78334387891c6f40cc33b, type: 2}
     - target: {fileID: 6058262264790132438, guid: fd163e70194ecb94c964c97a2979a4af, type: 3}
       propertyPath: m_Name
       value: TerrainGenerator
