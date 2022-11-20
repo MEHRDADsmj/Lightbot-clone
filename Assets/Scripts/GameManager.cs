@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
             goalBlocks.TryGetValue(block, out status);
             goalBlocks[block] = !status;
             block.GetComponent<Block>().ToggleLight();
+            CheckFinishLevel();
         }
     }
 
@@ -79,11 +80,30 @@ public class GameManager : MonoBehaviour
     private void ResetGame()
     {
         CleanupLevel();
+        goalBlocks.Clear();
         BeginTerrainGeneration();
         main.Empty();
         proc1.Empty();
-        goalBlocks.Clear();
         CurrentProcedure = main;
+    }
+
+    private void CheckFinishLevel()
+    {
+        foreach (var value in goalBlocks.Values)
+        {
+            if (value == false)
+            {
+                return;
+            }
+        }
+        
+        // Level completed
+        FinishGame();
+    }
+
+    private void FinishGame()
+    {
+        Debug.Log("Finish");
     }
 
     private void CleanupLevel()
