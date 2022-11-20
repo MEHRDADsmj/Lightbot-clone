@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TerrainGenerator terrainGenerator;
     private Dictionary<GameObject, bool> goalBlocks = new Dictionary<GameObject, bool>();
+    [SerializeField] private Procedure main;
 
     public static GameManager instance;
 
@@ -54,5 +55,10 @@ public class GameManager : MonoBehaviour
         {
             goalBlocks.Add(block, false);
         }
+    }
+
+    public void StartExecution()
+    {
+        main.Execute();
     }
 }
