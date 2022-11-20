@@ -67,6 +67,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool HaveDifferentHeight(GameObject block1, GameObject block2)
+    {
+        Vector3 startPos = instance.Terrain.NormalizeBlockPosition(block1);
+        Vector3 destPos = instance.Terrain.NormalizeBlockPosition(block2);
+        if (Mathf.Abs(startPos.y - destPos.y) > 0.01f)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void StartExecution()
     {
         main.Execute();

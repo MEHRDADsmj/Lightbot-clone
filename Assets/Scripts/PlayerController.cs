@@ -36,13 +36,34 @@ public class PlayerController : MonoBehaviour
         return hitResult;
     }
 
-    public void MoveForward()
+    public bool GetForwardBlock(out GameObject block)
     {
+        block = null;
         Vector3 newPos = transform.position + (GameManager.instance.Terrain.MeshBounds.x * transform.forward);
-        RaycastHit hitResult = RaycastDown(newPos);
+        RaycastHit hitResult = RaycastDown(newPos + new Vector3(0.0f, 20.0f, 0.0f));
         if (hitResult.transform)
         {
-            transform.position = newPos;
+            block = hitResult.transform.parent.gameObject;
+            return true;
+        }
+
+        return false;
+    }
+
+    public void MoveForward(bool jumpMode = false)
+    {
+        GameObject forwardBlock;
+        if (GetForwardBlock(out forwardBlock))
+        {
+            bool haveDifferentHeight = GameManager.instance.HaveDifferentHeight(GetCurrentBlock(), forwardBlock);
+            if (jumpMode && haveDifferentHeight)
+            {
+                transform.position = forwardBlock.transform.position + new Vector3(0.0f, GameManager.instance.Terrain.MeshBounds.y, 0.0f);
+            }
+            else if (!jumpMode && !haveDifferentHeight)
+            {
+                transform.position = forwardBlock.transform.position + new Vector3(0.0f, GameManager.instance.Terrain.MeshBounds.y, 0.0f);
+            }
         }
     }
 
