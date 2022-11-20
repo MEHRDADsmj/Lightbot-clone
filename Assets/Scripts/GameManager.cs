@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
     {
         BeginTerrainGeneration();
         currentProc = main;
-        FindObjectOfType<MoveCommand>().Register();
     }
 
     public void BeginTerrainGeneration()
