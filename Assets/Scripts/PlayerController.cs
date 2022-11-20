@@ -17,9 +17,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject GetCurrentBlock()
     {
-        Ray ray = new Ray(transform.position, Vector3.down);
-        RaycastHit hitResult;
-        if (Physics.Raycast(ray, out hitResult, 100.0f))
+        RaycastHit hitResult = RaycastDown(transform.position);
+        if (hitResult.transform)
         {
             return hitResult.transform.parent.gameObject;
         }
@@ -29,9 +28,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private RaycastHit RaycastDown(Vector3 pos)
+    {
+        Ray ray = new Ray(pos, Vector3.down);
+        RaycastHit hitResult;
+        Physics.Raycast(ray, out hitResult, 100.0f);
+        return hitResult;
+    }
+
     public void MoveForward()
     {
-        transform.position += (GameManager.instance.Terrain.MeshBounds.x * transform.forward);
+        Vector3 newPos = transform.position + (GameManager.instance.Terrain.MeshBounds.x * transform.forward);
+        RaycastHit hitResult = RaycastDown(newPos);
+        if (hitResult.transform)
+        {
+            transform.position = newPos;
+        }
     }
 
     public void Rotate(float amount)
