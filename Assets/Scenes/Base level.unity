@@ -348,7 +348,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -695,6 +695,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6058262264790132425, guid: fd163e70194ecb94c964c97a2979a4af, type: 3}
+      propertyPath: levelConfigData
+      value: 
+      objectReference: {fileID: 11400000, guid: af7c76e810eff3249b278acba41e3a40, type: 2}
     - target: {fileID: 6058262264790132438, guid: fd163e70194ecb94c964c97a2979a4af, type: 3}
       propertyPath: m_Name
       value: TerrainGenerator
