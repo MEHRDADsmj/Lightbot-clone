@@ -12,6 +12,11 @@ public class Procedure : CommandBase
         StartCoroutine(StartExecution());
     }
 
+    public void RegisterProc()
+    {
+        GameManager.instance.CurrentProcedure.commands.AddRange(commands);
+    }
+
     private IEnumerator StartExecution()
     {
         for (int index = 0; index < commands.Count; ++index)

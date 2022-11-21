@@ -373,7 +373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.14431311, y: 0.8469458, z: -0.28982773, w: -0.42173037}
-  m_LocalPosition: {x: 4.351083, y: 8.034452, z: 5.3677855}
+  m_LocalPosition: {x: 4.351083, y: 4.29, z: 5.3677855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -466,6 +466,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 285401490, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5731747497775072942}
+    - target: {fileID: 285401490, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1113017734}
     - target: {fileID: 969440915631722787, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -558,10 +566,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4085139330857567486, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5731747497775072942}
+    - target: {fileID: 4085139330857567486, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1425783689}
     - target: {fileID: 4911286172941840928, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5731747497775072942}
+    - target: {fileID: 7797926409465537513, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1113017734}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
 --- !u!1001 &5731747497775072941
@@ -624,9 +644,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1113017734}
     - target: {fileID: 5731747497773392673, guid: b763764cd01f1924a8a409a677f00622, type: 3}
+      propertyPath: procs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731747497773392673, guid: b763764cd01f1924a8a409a677f00622, type: 3}
       propertyPath: terrainGenerator
       value: 
       objectReference: {fileID: 476637776}
+    - target: {fileID: 5731747497773392673, guid: b763764cd01f1924a8a409a677f00622, type: 3}
+      propertyPath: procs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1113017734}
     - target: {fileID: 5731747497773392678, guid: b763764cd01f1924a8a409a677f00622, type: 3}
       propertyPath: m_Name
       value: GameManager

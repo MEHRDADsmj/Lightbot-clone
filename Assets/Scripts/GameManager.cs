@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TerrainGenerator terrainGenerator;
     private Dictionary<GameObject, bool> goalBlocks = new Dictionary<GameObject, bool>();
     [SerializeField] private Procedure main;
-    [SerializeField] private Procedure proc1;
+    [SerializeField] private List<Procedure> procs;
 
     private Procedure currentProc;
 
@@ -95,7 +95,10 @@ public class GameManager : MonoBehaviour
         goalBlocks.Clear();
         BeginTerrainGeneration();
         main.Empty();
-        proc1.Empty();
+        foreach (var proc in procs)
+        {
+            proc.Empty();
+        }
         CurrentProcedure = main;
     }
 
@@ -131,5 +134,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(players[index].gameObject);
         }
+    }
+
+    public void SetProcedure(Procedure newProc)
+    {
+        CurrentProcedure = newProc;
     }
 }

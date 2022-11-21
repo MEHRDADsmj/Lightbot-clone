@@ -9,7 +9,7 @@ public class CommandBase : MonoBehaviour, ICommand
         
     }
 
-    public void Register()
+    public virtual void Register()
     {
         GameManager.instance.AddCommand(this);
     }
