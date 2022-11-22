@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
         {
             proc.Empty();
         }
+        UIManager.instance.ResetUI();
         CurrentProcedure = main;
     }
 
