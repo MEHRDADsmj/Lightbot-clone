@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
     private void FinishGame()
     {
         Debug.Log("Finish");
+        UIManager.instance.ShowNextLevelButton();
     }
 
     private void CleanupLevel()

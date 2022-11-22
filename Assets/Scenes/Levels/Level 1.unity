@@ -484,6 +484,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1113017734}
+    - target: {fileID: 197030219835686502, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
+      propertyPath: m_Name
+      value: btn_NextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 197030219835686502, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 969440915631722787, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -848,9 +856,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8552481978759589897, guid: 0c150aed3efce2a4a8101413268d200e, type: 3}
-      propertyPath: availableCommands.Array.size
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: nextLevelButton
+      value: 
+      objectReference: {fileID: 8484004145243729362, guid: 83ad2bdfa615662439192ce1886d17f2, type: 3}
     - target: {fileID: 8552481978759589897, guid: 0c150aed3efce2a4a8101413268d200e, type: 3}
       propertyPath: availableCommands.Array.data[0]
       value: 

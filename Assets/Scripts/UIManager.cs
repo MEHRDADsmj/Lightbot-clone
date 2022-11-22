@@ -6,6 +6,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> availableCommands;
+    [SerializeField] private GameObject nextLevelButton;
 
     public static UIManager instance;
 
@@ -32,5 +33,10 @@ public class UIManager : MonoBehaviour
             command.SetActive(false);
         }
         InitUI();
+    }
+
+    public void ShowNextLevelButton()
+    {
+        nextLevelButton.SetActive(true);
     }
 }
