@@ -609,6 +609,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7797926409846622493, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
   m_PrefabInstance: {fileID: 969440914365421727}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &969440914365421730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 197030219835686502, guid: d931d3b125d8ccb4fad2b2d19cb86745, type: 3}
+  m_PrefabInstance: {fileID: 969440914365421727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5731747497775072941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -866,6 +871,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8552481978759589897, guid: 0c150aed3efce2a4a8101413268d200e, type: 3}
+      propertyPath: nextLevelButton
+      value: 
+      objectReference: {fileID: 969440914365421730}
     - target: {fileID: 8552481978759589897, guid: 0c150aed3efce2a4a8101413268d200e, type: 3}
       propertyPath: availableCommands.Array.size
       value: 5
