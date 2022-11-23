@@ -28,7 +28,11 @@ public class GameManager : MonoBehaviour
     
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
         {
             instance = this;
         }
@@ -134,7 +138,7 @@ public class GameManager : MonoBehaviour
         List<PlayerController> players = FindObjectsOfType<PlayerController>().ToList();
         for (int index = 0; index < players.Count; ++index)
         {
-            Destroy(players[index].gameObject);
+            players[index].SelfDestroy();
         }
     }
 

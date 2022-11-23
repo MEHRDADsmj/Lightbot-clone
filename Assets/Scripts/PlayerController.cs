@@ -9,7 +9,11 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
         {
             instance = this;
         }
@@ -70,5 +74,11 @@ public class PlayerController : MonoBehaviour
     public void Rotate(float amount)
     {
         transform.Rotate(Vector3.up, amount);
+    }
+
+    public void SelfDestroy()
+    {
+        instance = null;
+        Destroy(this.gameObject);
     }
 }
